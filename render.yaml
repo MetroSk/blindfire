@@ -1,0 +1,13 @@
+# One-click free deployment of the full game (client + multiplayer server) on Render.
+# https://render.com/deploy?repo=<this repo URL>
+services:
+  - type: web
+    name: blindfire
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"

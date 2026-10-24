@@ -1,0 +1,39 @@
+{
+  "name": "blindfire",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BLINDFIRE - a hidden-position artillery base-building strategy game",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n client,server -c yellow,cyan \"vite\" \"tsx watch server/index.ts\"",
+    "dev:client": "vite",
+    "dev:server": "tsx watch server/index.ts",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "start": "tsx server/index.ts",
+    "test": "vitest run",
+    "test:mp": "tsx scripts/mp-smoke.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io-client": "^4.8.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
+  }
+}
